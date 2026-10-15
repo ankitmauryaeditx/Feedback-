@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>SIGMA EATS | Review</title>
+<style>
+:root{color-scheme:dark;--bg:#050505;--tx:#f5efe3;--mu:#9a917f;--g1:#f6d77a;--g2:#c9972b;--bd:rgba(212,175,55,.22);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg)}
+body{color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.4;overflow-x:hidden;min-height:100vh;position:relative}
+.orb{position:fixed;border-radius:50%;filter:blur(70px);opacity:.28;pointer-events:none;z-index:0}
+.o1{width:300px;height:300px;background:#c9972b;top:-80px;left:-90px;animation:drift 14s ease-in-out infinite alternate}
+.o2{width:260px;height:260px;background:#7a5a12;bottom:-60px;right:-80px;animation:drift 18s ease-in-out infinite alternate-reverse}
+@keyframes drift{to{transform:translate(60px,70px) scale(1.2)}}
+.dust i{position:fixed;bottom:-10px;width:3px;height:3px;border-radius:50%;background:var(--g1);opacity:0;z-index:0;animation:rise linear infinite}
+@keyframes rise{0%{transform:translateY(0);opacity:0}15%{opacity:.7}100%{transform:translateY(-105vh);opacity:0}}
+.w{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:30px 16px 50px}
+.hero{text-align:center;margin-bottom:24px;animation:fadeUp .9s both}
+.brand{font-size:30px;font-weight:800;letter-spacing:.28em;margin:0;padding-left:.28em;background:linear-gradient(100deg,#8a6414 20%,#f6d77a 45%,#fff3c4 50%,#f6d77a 55%,#8a6414 80%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite}
+@keyframes shine{to{background-position:-250% 0}}
+.line{width:70px;height:1px;margin:12px auto;background:linear-gradient(90deg,transparent,var(--g1),transparent);animation:grow 1.4s .3s both}
+@keyframes grow{from{width:0;opacity:0}}
+.sub{color:var(--mu);font-size:14px;margin:0;letter-spacing:.04em}
+.card{background:rgba(255,255,255,.035);border:1px solid var(--bd);border-radius:20px;padding:18px;margin-bottom:16px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.5);animation:fadeUp .7s both}
+.card:nth-of-type(1){animation-delay:.25s}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}}
+h2{font-size:12px;margin:0 0 12px;color:var(--g1);letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.cats{display:flex;flex-wrap:wrap;gap:9px}
+.chip{position:relative;overflow:hidden;border:1px solid var(--bd);background:rgba(255,255,255,.04);color:var(--tx);border-radius:999px;padding:10px 16px;font-size:14px;cursor:pointer;transition:transform .18s,background .25s,color .25s,box-shadow .25s}
+.chip:active{transform:scale(.92)}
+.chip.on{background:linear-gradient(135deg,var(--g1),var(--g2));color:#1a1204;border-color:transparent;font-weight:600;box-shadow:0 0 18px rgba(246,215,122,.35);animation:pulse .5s}
+@keyframes pulse{40%{transform:scale(1.08)}}
+.tick{display:flex;align-items:center;gap:9px;padding:10px 14px}.bx{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--g2);display:inline-flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;line-height:1}.tick.on .bx{background:#1a1204;border-color:#1a1204;color:var(--g1);animation:pop .4s}
+.stars{display:flex;gap:6px}
+.star{font-size:32px;line-height:1;background:none;border:0;cursor:pointer;color:#2c2820;padding:0 2px;transition:color .2s,transform .2s}
+.star.on{color:var(--g1);text-shadow:0 0 14px rgba(246,215,122,.7)}
+.star.pop{animation:pop .5s}
+@keyframes pop{30%{transform:scale(1.6) rotate(-14deg)}60%{transform:scale(.9)}}
+.cat-name{font-weight:600;font-size:15px;margin-bottom:8px}
+.sec{border-top:1px solid var(--bd);padding-top:14px;margin-top:14px}
+.sec:first-child{border:0;padding:0;margin:0}
+textarea{width:100%;min-height:120px;border:1px solid var(--bd);border-radius:14px;padding:13px;background:rgba(0,0,0,.45);color:var(--tx);font:inherit;font-size:14px;resize:vertical;outline:none;transition:border-color .25s,box-shadow .25s}
+textarea:focus{border-color:var(--g1);box-shadow:0 0 0 3px rgba(246,215,122,.12)}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:16px;font-size:16px;font-weight:700;letter-spacing:.03em;color:#1a1204;cursor:pointer;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 8px 28px rgba(201,151,43,.35);transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:sweep 3s infinite}
+@keyframes sweep{60%,100%{left:130%}}
+.btn.ghost{background:none;box-shadow:none;color:var(--mu);font-weight:400;font-size:13px;margin-top:10px;text-decoration:underline;padding:8px}
+.btn.ghost::after{display:none}
+.note{font-size:12px;color:var(--mu);margin-top:10px;text-align:center}
+.hide{display:none}
+.toast{font-size:13px;color:var(--g1);text-align:center;margin-top:10px;min-height:18px}
+.foot{text-align:center;font-size:11px;color:#5d5748;letter-spacing:.2em;margin-top:26px}
+@media (prefers-reduced-motion:reduce){*,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<div class="dust" id="dust"></div>
+<div class="w">
+  <div class="hero">
+    <h1 class="brand">SIGMA EATS</h1>
+    <div class="line"></div>
+    <p class="sub">Aapka experience kaisa raha?</p>
+  </div>
+
+  <div class="card">
+    <h2>1 &middot; Kya review karna hai</h2>
+    <div class="cats" id="cats"></div>
+  </div>
+
+  <div class="card hide" id="rate"><h2>2 &middot; Rating &amp; details</h2><div id="secs"></div></div>
+
+  <div class="card hide" id="out">
+    <h2>3 &middot; Aapka review</h2>
+    <textarea id="txt"></textarea>
+    <a class="btn" id="post" target="_blank" rel="noopener" href="https://search.google.com/local/writereview?placeid=ChIJUzRzSNzXeDkRAWs56jtbh6s" style="margin-top:14px;text-align:center;text-decoration:none">Google par review karein</a>
+    <div class="toast" id="toast"></div>
+    <div class="note" style="color:var(--g1);margin-top:0">Google page par: review box dabayein &rarr; Paste &rarr; Post</div>
+    <button class="btn ghost" id="priv">Owner ko private feedback bhi dena hai</button>
+    <div id="pbox" class="hide" style="margin-top:8px">
+      <textarea id="ptxt" placeholder="Owner ke liye private message (optional)"></textarea>
+      <div class="note">Ye optional hai. Google review hamesha sabke liye khula hai.</div>
+    </div>
+  </div>
+  <div class="foot">SAGAR &middot; MADHYA PRADESH</div>
+</div>
+
+<script>
+var CAFE="SIGMA EATS, Sagar";
+var CATS={
+ "Food":["Tasty","Fresh","Great coffee","Good portions","Bland"],
+ "Service":["Friendly staff","Quick","Attentive","Slow"],
+ "Ambience":["Cozy","Good music","Great for work","Noisy"],
+ "Cleanliness":["Spotless tables","Clean washroom","Hygienic","Could be cleaner"],
+ "Price":["Value for money","Fair prices","Bit expensive"]
+};
+var sel={};
+var d=document.getElementById("dust");
+for(var k=0;k<14;k++){var p=document.createElement("i");p.style.left=Math.random()*100+"%";p.style.animationDuration=(8+Math.random()*9)+"s";p.style.animationDelay=(Math.random()*8)+"s";d.appendChild(p)}
+var catsEl=document.getElementById("cats");
+Object.keys(CATS).forEach(function(c){
+  var b=document.createElement("button");b.className="chip";b.textContent=c;
+  b.onclick=function(){
+    if(sel[c]){delete sel[c];b.classList.remove("on")}else{sel[c]={r:0,t:[],last:0};b.classList.add("on")}
+    renderSecs();build();
+  };
+  catsEl.appendChild(b);
+});
+function renderSecs(){
+  var box=document.getElementById("secs");box.innerHTML="";
+  var keys=Object.keys(sel);
+  document.getElementById("rate").classList.toggle("hide",!keys.length);
+  document.getElementById("out").classList.toggle("hide",!keys.length);
+  keys.forEach(function(c){
+    var s=document.createElement("div");s.className="sec";
+    s.innerHTML='<div class="cat-name">'+c+'</div>';
+    var st=document.createElement("div");st.className="stars";
+    for(var i=1;i<=5;i++){(function(i){
+      var b=document.createElement("button");
+      b.className="star"+(sel[c].r>=i?" on":"")+(sel[c].last===i?" pop":"");b.textContent="\u2605";
+      b.onclick=function(){sel[c].r=i;sel[c].last=i;renderSecs();build()};st.appendChild(b);
+    })(i)}
+    sel[c].last=0;
+    s.appendChild(st);
+    var tg=document.createElement("div");tg.className="cats";tg.style.marginTop="10px";
+    CATS[c].forEach(function(t){
+      var on=sel[c].t.indexOf(t)>-1;var b=document.createElement("button");b.className="chip tick"+(on?" on":"");b.innerHTML='<span class="bx">'+(on?"\u2713":"")+'</span>'+t;
+      b.onclick=function(){var a=sel[c].t,k=a.indexOf(t);k>-1?a.splice(k,1):a.push(t);renderSecs();build()};
+      tg.appendChild(b);
+    });
+    s.appendChild(tg);box.appendChild(s);
+  });
+}
+function build(){
+  var parts=[];
+  Object.keys(sel).forEach(function(c){
+    var o=sel[c];if(!o.r&&!o.t.length)return;
+    var line=o.t.length?c+": "+o.t.join(", ").toLowerCase():c+" "+o.r+"/5";
+    parts.push(line);
+  });
+  var ta=document.getElementById("txt");
+  if(parts.length){ta.value="Loved my visit to "+CAFE+"! "+parts.join(". ")+".";autoCopy()}
+}
+function autoCopy(){var t=document.getElementById("txt").value;if(!t)return;try{navigator.clipboard.writeText(t).then(function(){document.getElementById("toast").textContent="\u2713 Review copy ho gaya"},function(){})}catch(e){}}
+document.getElementById("post").onclick=function(){
+  var t=document.getElementById("txt").value;
+  var done=function(m){document.getElementById("toast").textContent=m};
+  try{navigator.clipboard.writeText(t).then(function(){done("\u2713 Copy ho gaya. Google par stars chunein, box me Paste karein, Post dabayein.")},function(){done("Text select karke copy karein.")})}catch(e){done("Text select karke copy karein.")}
+};
+document.getElementById("txt").addEventListener("input",autoCopy);
+document.getElementById("priv").onclick=function(){document.getElementById("pbox").classList.toggle("hide")};
+</script>
+</body>
+</html>
